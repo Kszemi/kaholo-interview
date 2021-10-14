@@ -15,6 +15,9 @@
   }
 }
 .result-container {
+  overflow-y:scroll;
+  background: black;
+  max-height: 300px;
   display: flex;
   margin: 50px auto;
   width: 75%;
