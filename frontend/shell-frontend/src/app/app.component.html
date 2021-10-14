@@ -1,0 +1,33 @@
+<link rel="stylesheet" href="app.component.scss">
+<div class="container">
+    <textarea matInput
+              type="text"
+              [(ngModel)]="userInput"
+              (keydown.enter)="execute()"
+              placeholder="Hello:) Enter shell command">
+    </textarea>
+</div>
+<div class="container">
+  <button class="btn-grad"
+          mat-raised-button
+          color="basic"
+          [disabled]="!userInput"
+          (click)="execute()">Execute</button>
+</div>
+<div class="result-container">
+  <div class="shell-output">
+    <h1>Output</h1>
+    <p>
+      {{ output }}
+    </p>
+  </div>
+  <div class="shell-cache">
+    <h1>Cached results</h1>
+    <li *ngFor="let item of cachedResults">...
+      <p>
+        {{ item }}
+      </p>
+    </li>
+  </div>
+</div>
+
